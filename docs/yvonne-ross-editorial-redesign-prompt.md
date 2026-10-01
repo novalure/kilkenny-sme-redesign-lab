@@ -1,0 +1,9 @@
+# Design prompt — Yvonne Ross editorial portfolio
+
+Create a premium editorial website for Yvonne Ross Jewellery, a Kilkenny designer and goldsmith. Use Tiffany.at only as a reference for design principles observed on 1 October 2026: a quiet announcement strip, prominent centred brand identity, restrained navigation, large jewellery photography, elegant serif headlines, generous white space, fine rules, text links, and a rhythm of gallery and editorial story sections. Develop a distinct Yvonne Ross visual identity from her official logo and photographs; do not copy Tiffany's trademark colour, logo, fonts, layouts, copy or imagery.
+
+The site is an atelier portfolio, **not a shop**. Show selected work as an editorial gallery without prices, availability, product links, cart, checkout or shopping language. Lead visitors to discuss a commission, engagement or wedding ring, or visit the studio. Use the official Yvonne Ross photographs and logo already documented in the media register. Do not invent a designer portrait, workshop scene or product claim.
+
+Content hierarchy: a strong photographic opening with one clear consultation action; selected jewellery as visual proof of craft; bespoke and remodelling; engagement and wedding; Yvonne's fine art background and traditional goldsmithing; a discreet, dated Google rating linking to the listing; studio at 19 Rose Inn Street, Kilkenny City; direct phone, email and directions. Keep the contact form visibly demo-only and non-sending.
+
+Make two related but distinct public directions: V2 is a dramatic image-led editorial campaign with an inky and ivory palette; V3 is a luminous gallery direction with ivory, stone and muted sea-glass accents. Both use sharp image edges, precise typography, generous breathing room, responsive navigation, clear focus states, descriptive image text, reduced motion support and no horizontal overflow. Preserve the unofficial concept label and noindex settings.

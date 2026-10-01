@@ -19,10 +19,10 @@ export function Header() {
   const pathname = usePathname();
   return (
     <>
-      <div className="concept-banner">Unofficial website redesign concept <span>·</span> The Light Studio / V3</div>
+      <div className="concept-banner">Unofficial Yvonne Ross Jewellery design concept <span>·</span> Kilkenny, Ireland</div>
       <header className="site-header">
         <Link href={basePath} className="wordmark" aria-label="Yvonne Ross Jewellery, home" onClick={() => setOpen(false)}>
-          <Image src="/images/yvonne-ross/official-logo.png" alt="Yvonne Ross Jewellery official logo" width={100} height={73} className="logo-image" priority />
+          <Image src="/images/yvonne-ross/official-logo.png" alt="Yvonne Ross Jewellery official logo" width={152} height={111} className="logo-image" priority />
         </Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
           {nav.map((item) => (
@@ -30,7 +30,7 @@ export function Header() {
           ))}
         </nav>
         <Link className="header-contact" href={`${basePath}/contact`} data-event="contact_header_click">
-          Contact Yvonne <span aria-hidden="true">&gt;</span>
+          Make an enquiry <span aria-hidden="true">&gt;</span>
         </Link>
         <button className="menu-toggle" type="button" aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(!open)}>
           {open ? "Close" : "Menu"}<span aria-hidden="true">{open ? "×" : "="}</span>
@@ -38,7 +38,7 @@ export function Header() {
       </header>
       <nav id="mobile-menu" className={`mobile-menu ${open ? "is-open" : ""}`} aria-label="Mobile navigation" inert={!open}>
         {nav.map((item) => <Link key={item.label} href={item.href} onClick={() => setOpen(false)}>{item.label}<span aria-hidden="true">&gt;</span></Link>)}
-        <Link href={`${basePath}/contact`} onClick={() => setOpen(false)} data-event="contact_header_click">Contact Yvonne <span aria-hidden="true">&gt;</span></Link>
+        <Link href={`${basePath}/contact`} onClick={() => setOpen(false)} data-event="contact_header_click">Make an enquiry <span aria-hidden="true">&gt;</span></Link>
       </nav>
     </>
   );
@@ -47,10 +47,10 @@ export function Header() {
 export function Footer() {
   return (
     <footer className="site-footer">
-      <div className="footer-kicker"><span>YVONNE ROSS / KILKENNY</span><span>JEWELLERY · BESPOKE · STUDIO</span></div>
-      <Link href={`${basePath}/contact`} className="footer-big-link" data-event="contact_header_click">Let&apos;s talk<span aria-hidden="true">&gt;</span></Link>
-      <div className="footer-wordmark" aria-hidden="true">Yvonne Ross</div>
-      <a className="footer-logo" href={studio.officialSite} target="_blank" rel="noopener noreferrer" aria-label="Yvonne Ross Jewellery official website"><Image src="/images/yvonne-ross/official-logo.png" alt="Yvonne Ross Jewellery official logo" width={170} height={124} /></a>
+      <div className="footer-kicker"><span>YVONNE ROSS JEWELLERY</span><span>DESIGNER & GOLDSMITH · KILKENNY</span></div>
+      <h2 className="footer-heading">A conversation is where it begins.</h2>
+      <Link href={`${basePath}/contact`} className="footer-big-link" data-event="contact_header_click">Contact the studio <span aria-hidden="true">&gt;</span></Link>
+      <a className="footer-logo" href={studio.officialSite} target="_blank" rel="noopener noreferrer" aria-label="Yvonne Ross Jewellery official website"><Image src="/images/yvonne-ross/official-logo.png" alt="Yvonne Ross Jewellery official logo" width={138} height={101} /></a>
       <div className="footer-bottom">
         <div><span>{studio.addressLine}, {studio.city}, {studio.country}</span><a href={studio.phoneHref}>{studio.phoneDisplay}</a><a href={`mailto:${studio.email}`}>{studio.email}</a></div>
         <div><Link href={basePath}>Home</Link><Link href={`${basePath}/bespoke`}>Bespoke</Link><Link href={`${basePath}/engagement-wedding`}>Engagement</Link><a href={studio.officialSite} target="_blank" rel="noopener noreferrer">Current official site &gt;</a></div>
