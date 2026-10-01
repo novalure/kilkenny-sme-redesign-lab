@@ -11,6 +11,6 @@ Local screenshots reviewed at 375, 390, 430, 768, 1024, 1280, 1440 and 1728px fo
 - **Automated checks:** `npm run typecheck`, `npm run lint`, `npm run build`, `npm test` pass. Browser tests cover review visibility/link, desktop contact, mobile call/overflow/reel, map attribution/directions and no-send form behaviour.
 - **Console:** All route first views checked in Chromium. A transient hydration warning occurred on some rapid contact-route captures in the development server. The built production server was then checked on all four routes at 390 and 1440px, including the map sections: no page errors, console errors, missing local requests or horizontal overflow. OSM tiles loaded (6 mobile, 12 desktop) with attribution visible.
 
-No V2 deployment was created.
+The public V2 showcase was later deployed at https://yvonne-ross-jewellery-concept.vercel.app/. Its four routes and icon returned HTTP 200 without login. Chromium checks at 390 and 1440px confirmed the correct variant, loaded hero and logo, no page errors and no horizontal overflow.
 
 After the official photography and logo were added, the production build and all four browser tests passed again. The homepage was inspected at 390 and 1440px with every image loaded; no broken images, page errors or horizontal overflow were found. Image container height was also corrected for the engagement, material and secondary detail panels.
