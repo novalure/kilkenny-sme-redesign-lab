@@ -8,4 +8,4 @@
 - Google Places requests remain server-only with six-hour revalidation when credentials exist. The current build uses the dated rating snapshot because credentials are absent.
 - Motion is limited to two short campaign entrances, reel scrolling and CTA state changes. All transitions/animations are disabled under `prefers-reduced-motion`.
 
-Before public publication, confirm image and logo reuse permission with Yvonne Ross Jewellery and recapture the current review rating.
+For continued public use, confirm image and logo reuse permission with Yvonne Ross Jewellery and recapture the current review rating periodically.

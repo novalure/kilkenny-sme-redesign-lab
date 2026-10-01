@@ -1,6 +1,6 @@
 # Official media register — V2 and V3
 
-Downloaded from Yvonne Ross Jewellery's Squarespace CDN on 1 October 2026 at `?format=1200w` for this unpublished design concept. The local files preserve the site's photography; layout crops are made in CSS. The user asked for these official images and logos in both versions. Copyright/photographer attribution and permission for public publication remain to be confirmed with Yvonne Ross Jewellery.
+Downloaded from Yvonne Ross Jewellery's Squarespace CDN on 1 October 2026 at `?format=1200w` for this redesign concept. The local files preserve the site's photography; layout crops are made in CSS. The user asked for these official images and logos in both publicly shared versions. Copyright/photographer attribution and permission for ongoing public use remain to be confirmed with Yvonne Ross Jewellery.
 
 | Local file in `public/images/yvonne-ross/` | Source URL | Use |
 |---|---|---|
