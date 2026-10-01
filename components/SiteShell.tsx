@@ -32,10 +32,10 @@ export function Header() {
         <Link className="header-contact" href={`${basePath}/contact`} data-event="contact_header_click">
           Make an enquiry <span aria-hidden="true">&gt;</span>
         </Link>
+        <a className="mobile-header-call" href={studio.phoneHref} aria-label={`Call Yvonne Ross Jewellery at ${studio.phoneDisplay}`} data-event="mobile_call_click">Call</a>
         <button className={`menu-toggle ${open ? "is-open" : ""}`} type="button" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(!open)}>
           <span className="hamburger-lines" aria-hidden="true"><span /><span /><span /></span>
         </button>
-        <a className="mobile-header-call" href={studio.phoneHref} aria-label={`Call Yvonne Ross Jewellery at ${studio.phoneDisplay}`} data-event="mobile_call_click">Call</a>
       </header>
       <nav id="mobile-menu" className={`mobile-menu ${open ? "is-open" : ""}`} aria-label="Mobile navigation" inert={!open}>
         {nav.map((item) => <Link key={item.label} href={item.href} onClick={() => setOpen(false)}>{item.label}<span aria-hidden="true">&gt;</span></Link>)}

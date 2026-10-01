@@ -31,6 +31,7 @@ test("mobile header stays visible with a working menu, call and designer portrai
   await expect(call).toBeVisible();
   await expect(call).toHaveAttribute("href", "tel:+353877799430");
   await expect(call).toHaveAttribute("aria-label", /\+353 \(0\)87 779 9430/);
+  expect((await call.boundingBox())!.x).toBeLessThan((await page.locator(".menu-toggle").boundingBox())!.x);
   await page.locator("#jewellery").scrollIntoViewIfNeeded();
   await expect(page.locator(".work-piece")).toHaveCount(3);
   await expect(page.locator(".work-piece").first().locator("img")).toHaveJSProperty("complete", true);
