@@ -46,7 +46,7 @@ test("mobile rating, swipe reel and persistent call fit the viewport", async ({ 
   await expect(page.getByRole("button", { name: "Menu" })).toBeVisible();
 });
 
-test("secondary routes use V2 calls to action and preserve the map", async ({ page }) => {
+test("secondary routes expose calls to action and preserve the map", async ({ page }) => {
   for (const [route, action] of [
     ["bespoke", /discuss a commission/i],
     ["engagement-wedding", /discuss your ring/i],

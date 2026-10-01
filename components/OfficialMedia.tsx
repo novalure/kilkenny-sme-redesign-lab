@@ -9,6 +9,8 @@ const media = {
   bespoke: { src: "/images/yvonne-ross/bespoke-selection.jpg", alt: "Selection of jewellery shown on Yvonne Ross's bespoke page" },
   wedding: { src: "/images/yvonne-ross/blue-sapphire-halo.jpg", alt: "White gold halo ring with blue sapphire from Yvonne Ross's bespoke gallery" },
   material: { src: "/images/yvonne-ross/gold-band.jpg", alt: "Gold band with gemstones shown in Yvonne Ross's bespoke gallery" },
+  aquamarine: { src: "/images/yvonne-ross/aquamarine-earrings.jpg", alt: "Aquamarine earrings shown in Yvonne Ross's bespoke gallery" },
+  pendant: { src: "/images/yvonne-ross/aquamarine-pendant.jpg", alt: "Aquamarine pendant shown in Yvonne Ross's bespoke gallery" },
 } as const;
 
 export type OfficialMediaKind = keyof typeof media;

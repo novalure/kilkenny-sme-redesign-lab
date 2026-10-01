@@ -56,6 +56,7 @@ p { line-height: 1.55; }
 
 /* Official photography from Yvonne Ross Jewellery; crops are layout-only. */
 .official-media { position:relative; width:100%; height:100%; overflow:hidden; background:#e9e9e7; }
+.engagement-visual .official-media,.material-visual .official-media,.route-duo-art .official-media { min-height:inherit; }
 .official-media img { object-fit:cover; object-position:center; transition:transform .8s var(--ease); }
 .media-hero img { object-position:51% 48%; }
 .media-flower img,.media-halo img,.media-diamond img { object-fit:contain; }

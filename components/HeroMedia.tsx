@@ -30,7 +30,7 @@ export function HeroMedia({ videoSrc, posterSrc, mobilePosterSrc }: {
     };
   }, [videoSrc, posterSrc]);
   return <div className="hero-art-slot" data-media-slot="H01 desktop / H02 mobile" ref={slot}>
-    <OfficialMedia kind="hero" label="White gold halo ring with blue sapphire shown on Yvonne Ross Jewellery’s official website" priority />
+    <OfficialMedia kind="aquamarine" label="Aquamarine earrings shown in Yvonne Ross Jewellery’s official bespoke gallery" priority />
     {posterSrc && <Image className="hero-poster" src={posterSrc} alt="Yvonne Ross Jewellery hero photograph" fill sizes="100vw" priority />}
     {mobilePosterSrc && <Image className="hero-mobile-poster" src={mobilePosterSrc} alt="Yvonne Ross Jewellery hero photograph" fill sizes="100vw" priority />}
     {playVideo && videoSrc && posterSrc && <video className="hero-video" src={videoSrc} poster={posterSrc} autoPlay loop muted playsInline preload="none" aria-hidden="true" />}

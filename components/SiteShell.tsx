@@ -19,7 +19,7 @@ export function Header() {
   const pathname = usePathname();
   return (
     <>
-      <div className="concept-banner">Unofficial website redesign concept <span>·</span> Yvonne Ross Jewellery</div>
+      <div className="concept-banner">Unofficial website redesign concept <span>·</span> The Light Studio / V3</div>
       <header className="site-header">
         <Link href={basePath} className="wordmark" aria-label="Yvonne Ross Jewellery, home" onClick={() => setOpen(false)}>
           <Image src="/images/yvonne-ross/official-logo.png" alt="Yvonne Ross Jewellery official logo" width={100} height={73} className="logo-image" priority />
@@ -48,8 +48,8 @@ export function Footer() {
   return (
     <footer className="site-footer">
       <div className="footer-kicker"><span>YVONNE ROSS / KILKENNY</span><span>JEWELLERY · BESPOKE · STUDIO</span></div>
-      <Link href={`${basePath}/contact`} className="footer-big-link" data-event="contact_header_click">LET&apos;S TALK<span aria-hidden="true">&gt;</span></Link>
-      <div className="footer-wordmark" aria-hidden="true">YVONNE ROSS</div>
+      <Link href={`${basePath}/contact`} className="footer-big-link" data-event="contact_header_click">Let&apos;s talk<span aria-hidden="true">&gt;</span></Link>
+      <div className="footer-wordmark" aria-hidden="true">Yvonne Ross</div>
       <a className="footer-logo" href={studio.officialSite} target="_blank" rel="noopener noreferrer" aria-label="Yvonne Ross Jewellery official website"><Image src="/images/yvonne-ross/official-logo.png" alt="Yvonne Ross Jewellery official logo" width={170} height={124} /></a>
       <div className="footer-bottom">
         <div><span>{studio.addressLine}, {studio.city}, {studio.country}</span><a href={studio.phoneHref}>{studio.phoneDisplay}</a><a href={`mailto:${studio.email}`}>{studio.email}</a></div>
