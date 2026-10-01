@@ -13,7 +13,7 @@ test("editorial home leads to bespoke, verified reviews and studio directions", 
   const reviews = page.locator(".editorial-trust a");
   await expect(reviews).toContainText("4.6");
   await expect(reviews).toContainText("Google reviews");
-  await expect(reviews).toContainText("As of 1 Oct 2026");
+  await expect(reviews).not.toContainText("As of");
   await expect(reviews).toHaveAttribute("href", /google\.com\/maps/);
   await expect(page.locator(".work-piece")).toHaveCount(3);
   await expect(page.locator('a[href*="/shop"]')).toHaveCount(0);

@@ -8,7 +8,6 @@ import { getReviewSummary } from "@/lib/reviews";
 
 export default async function YvonneHome() {
   const reviews = await getReviewSummary();
-  const reviewDate = new Date(`${reviews.checkedOn}T00:00:00Z`).toLocaleDateString("en-IE", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
   return <>
     <section className="editorial-hero" aria-labelledby="home-title">
       <HeroMedia />
@@ -22,11 +21,10 @@ export default async function YvonneHome() {
 
     <div className="editorial-trust" aria-label="Studio and review information">
       <span>19 ROSE INN STREET · KILKENNY</span>
-      <a className="review-link" href={reviews.listingUrl} target="_blank" rel="noopener noreferrer" data-event="google_reviews_click" aria-label={`${reviews.rating.toFixed(1)} out of 5 on Google, ${reviews.source === "places" ? `updated ${reviewDate}` : `snapshot from ${reviewDate}`}. View reviews`}>
+      <a className="review-link" href={reviews.listingUrl} target="_blank" rel="noopener noreferrer" data-event="google_reviews_click" aria-label={`${reviews.rating.toFixed(1)} out of 5 on Google. View reviews`}>
         <span className="review-stars" aria-hidden="true" style={{ "--star-fill": `${reviews.rating / 5 * 100}%` } as React.CSSProperties}>★★★★★</span>
         <strong>{reviews.rating.toFixed(1)}</strong>
         <span>Google reviews</span>
-        <small>{reviews.source === "places" ? `Updated ${reviewDate}` : `As of ${reviewDate}`}</small>
         <span aria-hidden="true">&gt;</span>
       </a>
       <span>PERSONAL COMMISSIONS & STUDIO VISITS</span>
