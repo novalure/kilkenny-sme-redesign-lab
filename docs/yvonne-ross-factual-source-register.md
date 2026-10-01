@@ -24,3 +24,7 @@ Verified 1 October 2026. This register covers facts actually used in the concept
 - **Review count:** An earlier supplied note cited eight, but a current count could not be independently verified. The concept omits the count.
 - **Awards:** The official home page calls Yvonne award winning, but specific awards were not independently checked, so the concept omits the claim.
 - **Biography and tenure:** No years of experience, qualifications other than the official Gem-A claim, or biographical details are added.
+
+## V2 recheck — 1 October 2026
+
+The official home, bespoke and contact pages returned HTTP 200 and still showed the studio, public phone, Tuesday–Saturday visitor statement, fine art background, clean lines and sculpture/architecture influence. The three linked official product pages also returned HTTP 200 and still listed the names and material details used in `lib/yvonne.ts`; the green sapphire piece was marked out of stock, so V2 makes no availability claim. An automated revisit to Google Maps did not expose the business detail panel, so no new rating/count was extracted; see the V2 reviews plan. Mechanical influence was not confirmed in the inspected official copy and is omitted from visible V2 claims.

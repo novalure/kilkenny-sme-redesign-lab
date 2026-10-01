@@ -1,14 +1,14 @@
 # Kilkenny SME redesign lab
 
-Phase 1–3 research is preserved in `research/` and is not served by the app. Phase 4 adds one isolated, unofficial Yvonne Ross Jewellery redesign concept.
+The `codex/redesign-yvonne-ross-v2` branch contains the **Future Atelier** V2 redesign of the unofficial Yvonne Ross Jewellery concept. The completed V1 remains on `codex/redesign-yvonne-ross`. Phase 1–3 research is preserved in `research/` and never served by the app.
 
-## Run locally in the cloud workspace
+## Run locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open `/demos/yvonne-ross`. Run `npm run typecheck`, `npm run lint`, `npm test`, and `npm run build` for verification. Playwright uses a system Chromium when available; otherwise install a Playwright Chromium browser first. The project is structured as a standard Next.js root app for a future Vercel import, but deployment is intentionally out of scope.
+Open `/demos/yvonne-ross`. Verify with `npm run typecheck`, `npm run lint`, `npm run build`, and `npm test`. Playwright uses system Chromium where available. V2 is ready for a later Vercel preview but has **not been deployed**.
 
-The contact form is demo-only and sends no messages. The map needs browser access to OpenStreetMap tiles. See `docs/` for verified facts, conflicts, image rights, review integration, map policy, media slots, events, and design rationale.
+The form is demo-only and sends no message. The map uses OpenStreetMap tiles with attribution. Google rating falls back to a dated snapshot until server-side Places credentials are supplied. Original abstract concept visuals stand in for licensed photography. See `docs/yvonne-ross-v2-*` for audit, benchmarks, visual comparison and QA.

@@ -18,3 +18,7 @@ The concept does not send analytics or collect lead data. `data-event` attribute
 | shop_click | Official shop link | Transaction exploration |
 
 The adapter should distinguish demo clicks from genuine business outcomes and should not record form field values.
+
+## V2 additions
+
+The editorial hero and dedicated review section both retain `google_reviews_click`. The jewellery reel emits a local `yvonne-analytics` CustomEvent named `jewellery_reel_interaction` with direction only when its controls are used; no analytics endpoint receives it. On a future approved analytics integration, this can be wired to a consent-aware adapter. All other required V1 event attributes remain on their relevant V2 actions.

@@ -13,3 +13,7 @@ Checked 1 October 2026. No image or logo from the official site was copied into 
 | Google rating, 4.6 | Google Maps business listing | Dated snapshot trust signal | Public factual snapshot; display terms to review | Conditional | Re-verify or integrate Places API |
 
 No UNKNOWN-rights media is bundled or served by the app. Concept illustrations are labelled as such so they cannot be mistaken for actual inventory photographs.
+
+## V2 changes
+
+The V2 branch uses original CSS form studies in `components/Artwork.tsx` and `app/globals.css`, still labelled as abstract concept visuals. No official product, portrait, studio or logo images are bundled. The V2 font is **Geist**, self-hosted by Next.js under its open-source licence; the V1 Cormorant/Manrope pair is no longer used on this branch. `components/HeroMedia.tsx` provides future static and video slots; no video or generated Higgsfield media is configured. See `docs/yvonne-ross-higgsfield-asset-plan-v2.md` for mapping and rights conditions.
