@@ -4,7 +4,7 @@ Downloaded from Yvonne Ross Jewellery's Squarespace CDN on 1 October 2026 at `?f
 
 | Local file in `public/images/yvonne-ross/` | Source URL | Use |
 |---|---|---|
-| `official-logo.png` | https://images.squarespace-cdn.com/content/v1/6a0c542f7b108074a2407661/0142ade0-78fc-40ef-be9d-c1b637670869/Logo.jpg | Header, footer |
+| `official-logo.png` | https://images.squarespace-cdn.com/content/v1/6a0c542f7b108074a2407661/0142ade0-78fc-40ef-be9d-c1b637670869/Logo.jpg | Header, footer and icon (`app/icon.png` is a byte-for-byte copy) |
 | `blue-sapphire-halo.jpg` | https://images.squarespace-cdn.com/content/v1/6a0c542f7b108074a2407661/1779219108353-72WKJ3ZLTFI8MTRP1JGC/Yvonne%2BRoss%2B-%2BWhite%2BGold%2BHalo%2BRing%2Bwith%2BBlue%2BSapphire%2B-%2BHigh%2BRes.jpg | Home and engagement hero |
 | `bespoke-selection.jpg` | https://images.squarespace-cdn.com/content/v1/6a0c542f7b108074a2407661/17e4c3ed-d648-4172-ad99-6f29cecd6165/IMG_20210119_135754_440.jpg | Bespoke sections |
 | `diamond-flower.webp` | https://images.squarespace-cdn.com/content/v1/6a0c542f7b108074a2407661/ccb91eb1-d044-49e6-8142-835e52292d40/08+Gold+Mechanical+Flower+Ring.jpg | Jewellery reel |

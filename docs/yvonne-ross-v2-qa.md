@@ -13,4 +13,4 @@ Local screenshots reviewed at 375, 390, 430, 768, 1024, 1280, 1440 and 1728px fo
 
 No V2 deployment was created.
 
-After the official photography and logo were added, the production build and all four browser tests passed again. The homepage was inspected at 390 and 1440px with every image loaded; no broken images, page errors or horizontal overflow were found.
+After the official photography and logo were added, the production build and all four browser tests passed again. The homepage was inspected at 390 and 1440px with every image loaded; no broken images, page errors or horizontal overflow were found. Image container height was also corrected for the engagement, material and secondary detail panels.
