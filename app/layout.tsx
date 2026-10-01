@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Cormorant_Garamond, Geist } from "next/font/google";
 import "leaflet/dist/leaflet.css";
 import "./globals.css";
+import "./editorial.css";
+import "./editorial-v2.css";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-main" });
+const cormorant = Cormorant_Garamond({ subsets: ["latin"], variable: "--font-display", weight: ["400", "500"] });
 
 export const metadata: Metadata = {
   title: "Yvonne Ross Jewellery — Website Redesign Concept",
@@ -12,5 +15,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" data-scroll-behavior="smooth"><body className={geist.variable}>{children}</body></html>;
+  return <html lang="en" data-scroll-behavior="smooth"><body className={`${geist.variable} ${cormorant.variable}`}>{children}</body></html>;
 }
