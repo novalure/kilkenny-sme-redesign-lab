@@ -1,30 +1,31 @@
 type ArtworkProps = {
   kind:
-    "hero" | "flower" | "halo" | "diamond" | "craft" | "bespoke" | "wedding";
+    | "hero"
+    | "flower"
+    | "halo"
+    | "diamond"
+    | "craft"
+    | "bespoke"
+    | "wedding"
+    | "material";
   label?: string;
 };
 
+/** Original abstract form study. Each slot can be replaced by licensed media. */
 export function Artwork({ kind, label }: ArtworkProps) {
   return (
     <div
       className={`artwork art-${kind}`}
       role="img"
-      aria-label={
-        label ||
-        "Abstract concept artwork; not a Yvonne Ross product photograph"
-      }
+      aria-label={label || "Abstract concept artwork; not product photography"}
     >
-      <div className="art-grain" />
-      <div className="art-halo" />
-      <div className="art-ring">
-        <span className="art-setting">
-          <span className="art-gem" />
-        </span>
-      </div>
-      <div className="art-shadow" />
-      <span className="art-caption">
-        Concept visual · photography to follow
-      </span>
+      <div className="art-field" aria-hidden="true" />
+      <div className="art-orbit art-orbit-one" aria-hidden="true" />
+      <div className="art-orbit art-orbit-two" aria-hidden="true" />
+      <div className="art-form" aria-hidden="true" />
+      <div className="art-core" aria-hidden="true" />
+      <div className="art-glint" aria-hidden="true" />
+      <div className="art-coordinate" aria-hidden="true">YR / FORM STUDY</div>
     </div>
   );
 }

@@ -117,7 +117,7 @@ export function ContactForm({
             </label>
           </fieldset>
           <button
-            className="button button-dark"
+            className="action action-dark"
             type="submit"
             data-event="contact_form_submit_demo"
           >

@@ -5,90 +5,14 @@ import { basePath, studio } from "@/lib/yvonne";
 
 export const metadata: Metadata = {
   title: "Engagement & Wedding | Yvonne Ross Concept",
-  description:
-    "An unofficial concept for engagement and wedding jewellery by Yvonne Ross.",
+  description: "An unofficial concept for engagement and wedding jewellery by Yvonne Ross.",
 };
 
 export default function RingsPage() {
-  return (
-    <>
-      <section className="inner-hero">
-        <div>
-          <p className="eyebrow">Engagement & wedding</p>
-          <h1>
-            A moment.
-            <br />
-            <em>A lifetime.</em>
-          </h1>
-          <p>
-            Explore Yvonne&apos;s engagement and wedding jewellery, or start a
-            conversation about a ring made especially for you.
-          </p>
-          <Link
-            href={`${basePath}/contact?interest=Engagement%20Ring`}
-            className="button button-dark"
-            data-event="engagement_enquiry_click"
-          >
-            Discuss your ring &gt;
-          </Link>
-        </div>
-        <Artwork
-          kind="wedding"
-          label="Abstract ring concept artwork, not a product photograph"
-        />
-      </section>
-      <section className="inner-text section-pad">
-        <p className="eyebrow">A considered choice</p>
-        <h2>
-          Every detail
-          <br />
-          <em>has meaning.</em>
-        </h2>
-        <div>
-          <p>
-            Yvonne creates alternative and traditional engagement rings and
-            wedding bands. Her Gem-A Diamond Diploma is part of the expertise
-            she brings to conversations about diamonds.
-          </p>
-          <p>
-            See the current jewellery selection on her official shop, or arrange
-            to discuss a personal design in Kilkenny.
-          </p>
-          <div className="inline-actions">
-            <Link
-              href={`${basePath}/contact?interest=Wedding%20Rings`}
-              className="text-link"
-              data-event="wedding_enquiry_click"
-            >
-              Discuss wedding rings &gt;
-            </Link>
-            <a
-              href={studio.officialShop}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-link"
-              data-event="shop_click"
-            >
-              View official shop &gt;
-            </a>
-          </div>
-        </div>
-      </section>
-      <section className="inner-cta section-pad">
-        <p className="eyebrow">Begin a conversation</p>
-        <h2>
-          Choose together.
-          <br />
-          <em>Make it personal.</em>
-        </h2>
-        <Link
-          href={`${basePath}/contact?interest=Engagement%20Ring`}
-          className="button button-light"
-          data-event="engagement_enquiry_click"
-        >
-          Send an enquiry &gt;
-        </Link>
-      </section>
-    </>
-  );
+  return <>
+    <section className="route-hero route-rings" aria-labelledby="rings-title"><div className="route-art" data-media-slot="H05"><Artwork kind="wedding" label="Abstract ring geometry, not actual product photography" /></div><div className="route-hero-content"><span className="section-index">YVONNE ROSS / ENGAGEMENT & WEDDING</span><h1 id="rings-title">A RING.<br /><span>YOUR WAY.</span></h1><p>Contemporary forms for an intimate choice. Explore Yvonne&apos;s work or discuss a ring made around you.</p><Link href={`${basePath}/contact?interest=Engagement%20Ring`} className="action action-light" data-event="engagement_enquiry_click">Discuss your ring <span aria-hidden="true">&gt;</span></Link></div><span className="route-folio">02 / ENGAGEMENT & WEDDING</span></section>
+    <section className="route-detail section-frame"><span className="section-index">01 / CONSIDERED DESIGN</span><h2>THE FORM<br /><span>IS PERSONAL.</span></h2><div><p>Yvonne creates engagement rings and wedding bands, including alternative and traditional designs. Her Gem-A Diamond Diploma informs conversations about diamond rings.</p><p>See her current jewellery selection on the official shop, or discuss a personal design at the Kilkenny studio.</p><a href={studio.officialShop} target="_blank" rel="noopener noreferrer" className="action-text" data-event="shop_click">View the official shop <span aria-hidden="true">&gt;</span></a></div></section>
+    <section className="route-duo route-duo-rings"><div className="route-duo-art" data-media-slot="H06"><Artwork kind="diamond" label="Abstract mineral and ring form study" /></div><div className="route-duo-copy"><span className="section-index">02 / DETAIL</span><h2>METAL.<br />STONE.<br /><span>MEANING.</span></h2><p>Discuss the material, form and details that matter to you.</p><Link href={`${basePath}/contact?interest=Wedding%20Rings`} className="action-text" data-event="engagement_enquiry_click">Discuss wedding rings <span aria-hidden="true">&gt;</span></Link></div></section>
+    <section className="route-end section-frame"><span className="section-index">03 / NEXT STEP</span><h2>START WITH<br /><span>A QUESTION.</span></h2><Link href={`${basePath}/contact?interest=Engagement%20Ring`} className="action action-light" data-event="engagement_enquiry_click">Discuss your ring <span aria-hidden="true">&gt;</span></Link></section>
+  </>;
 }
