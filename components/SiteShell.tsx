@@ -19,8 +19,8 @@ export function Header() {
   const pathname = usePathname();
   return (
     <>
-      <div className="concept-banner">Unofficial Yvonne Ross Jewellery design concept <span>·</span> Kilkenny, Ireland</div>
-      <header className="site-header">
+      <div className="concept-banner">Unofficial Yvonne Ross Jewellery design concept <span className="banner-location"><span aria-hidden="true">·</span> Kilkenny, Ireland</span></div>
+      <div className="header-stack"><header className="site-header">
         <Link href={basePath} className="wordmark" aria-label="Yvonne Ross Jewellery, home" onClick={() => setOpen(false)}>
           <Image src="/images/yvonne-ross/official-logo.png" alt="Yvonne Ross Jewellery official logo" width={152} height={111} className="logo-image" priority />
         </Link>
@@ -32,14 +32,16 @@ export function Header() {
         <Link className="header-contact" href={`${basePath}/contact`} data-event="contact_header_click">
           Make an enquiry <span aria-hidden="true">&gt;</span>
         </Link>
-        <button className="menu-toggle" type="button" aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(!open)}>
-          {open ? "Close" : "Menu"}<span aria-hidden="true">{open ? "×" : "="}</span>
+        <button className={`menu-toggle ${open ? "is-open" : ""}`} type="button" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(!open)}>
+          <span className="hamburger-lines" aria-hidden="true"><span /><span /><span /></span>
         </button>
+        <a className="mobile-header-call" href={studio.phoneHref} aria-label={`Call Yvonne Ross Jewellery at ${studio.phoneDisplay}`} data-event="mobile_call_click">Call</a>
       </header>
       <nav id="mobile-menu" className={`mobile-menu ${open ? "is-open" : ""}`} aria-label="Mobile navigation" inert={!open}>
         {nav.map((item) => <Link key={item.label} href={item.href} onClick={() => setOpen(false)}>{item.label}<span aria-hidden="true">&gt;</span></Link>)}
         <Link href={`${basePath}/contact`} onClick={() => setOpen(false)} data-event="contact_header_click">Make an enquiry <span aria-hidden="true">&gt;</span></Link>
       </nav>
+      </div>
     </>
   );
 }
@@ -60,10 +62,6 @@ export function Footer() {
   );
 }
 
-export function MobileCall() {
-  return <a className="mobile-call" href={studio.phoneHref} data-event="mobile_call_click"><span>CALL THE STUDIO</span><span aria-hidden="true">&gt;</span></a>;
-}
-
 export function SiteShell({ children }: { children: React.ReactNode }) {
-  return <><a className="skip-link" href="#main-content">Skip to content</a><Header /><main id="main-content">{children}</main><Footer /><MobileCall /></>;
+  return <><a className="skip-link" href="#main-content">Skip to content</a><Header /><main id="main-content">{children}</main><Footer /></>;
 }

@@ -24,21 +24,30 @@ test("editorial home leads to bespoke, verified reviews and studio directions", 
   await expect(page.locator("form")).toBeVisible();
 });
 
-test("mobile gallery, menu and persistent call fit the viewport", async ({ page }) => {
+test("mobile header stays visible with a working menu, call and designer portrait", async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 900 });
   await page.goto(base);
-  const call = page.locator(".mobile-call");
+  const call = page.locator(".mobile-header-call");
   await expect(call).toBeVisible();
   await expect(call).toHaveAttribute("href", "tel:+353877799430");
+  await expect(call).toHaveAttribute("aria-label", /\+353 \(0\)87 779 9430/);
   await page.locator("#jewellery").scrollIntoViewIfNeeded();
   await expect(page.locator(".work-piece")).toHaveCount(3);
   await expect(page.locator(".work-piece").first().locator("img")).toHaveJSProperty("complete", true);
-  await expect(call).toBeVisible();
+  expect(Math.abs(await page.locator(".site-header").evaluate((header) => header.getBoundingClientRect().top))).toBeLessThan(2);
+  await expect(call).toBeInViewport();
   expect(await page.evaluate(() => document.body.scrollWidth)).toBe(375);
-  const menu = page.getByRole("button", { name: "Menu" });
+  const menu = page.getByRole("button", { name: "Open menu" });
   await menu.click();
   await expect(page.locator(".menu-toggle")).toHaveAttribute("aria-expanded", "true");
-  await expect(page.getByRole("navigation", { name: "Mobile navigation" }).getByRole("link", { name: /bespoke/i })).toBeVisible();
+  const navigation = page.getByRole("navigation", { name: "Mobile navigation" });
+  await expect(navigation.getByRole("link", { name: /bespoke/i })).toBeVisible();
+  await navigation.getByRole("link", { name: /about/i }).click();
+  await expect(page).toHaveURL(/#designer$/);
+  await expect(page.locator(".menu-toggle")).toHaveAttribute("aria-expanded", "false");
+  await expect(page.locator(".editorial-designer-image img")).toHaveJSProperty("complete", true);
+  expect(await page.locator(".editorial-designer-image img").evaluate((image: HTMLImageElement) => image.naturalWidth)).toBeGreaterThan(0);
+  await expect(page.locator("#designer")).toContainText("Gem-A Diamond Diploma");
 });
 
 test("secondary routes expose calls to action and preserve the map", async ({ page }) => {

@@ -28,7 +28,7 @@ export default async function YvonneHome() {
     <section className="editorial-intro" aria-labelledby="intro-title">
       <span className="editorial-kicker">THE ATELIER</span>
       <h2 id="intro-title">An eye for form.<br />A hand for detail.</h2>
-      <p>Yvonne Ross brings a fine art sensibility and traditional goldsmithing skills to jewellery with clean lines, sculptural shapes and a personal story.</p>
+      <p>From hand-picked gemstones to one-off commissions, Yvonne designs jewellery with personal character in her Kilkenny studio.</p>
     </section>
 
     <section id="jewellery" className="editorial-gallery" aria-labelledby="gallery-title">
@@ -42,8 +42,8 @@ export default async function YvonneHome() {
     </section>
 
     <section id="designer" className="editorial-designer" aria-labelledby="designer-title">
-      <div className="editorial-designer-copy"><span className="editorial-kicker">MEET THE MAKER</span><h2 id="designer-title">Designed with intention.</h2><p>Based in Kilkenny, Yvonne draws on sculpture and architecture to bring simplicity and structure to her work. Her Gem-A Diamond Diploma also informs conversations about diamond rings.</p><Link href={`${basePath}/contact`} className="editorial-link" data-event="contact_header_click">Speak with Yvonne <span aria-hidden="true">&gt;</span></Link></div>
-      <div className="editorial-designer-image"><OfficialMedia kind="craft" label="Geometric blue-stone ring from Yvonne Ross’s bespoke gallery" /></div>
+      <div className="editorial-designer-copy"><span className="editorial-kicker">MEET THE MAKER</span><h2 id="designer-title">Meet Yvonne.</h2><p>Yvonne Ross is an award-winning Irish designer and goldsmith with a boutique studio near Kilkenny Castle. She selects gemstones for their individual beauty and creates one-off jewellery with her clients. Her Gem-A Diamond Diploma also guides her work with diamond rings.</p><Link href={`${basePath}/contact`} className="editorial-link" data-event="contact_header_click">Speak with Yvonne <span aria-hidden="true">&gt;</span></Link></div>
+      <div className="editorial-designer-image"><OfficialMedia kind="portrait" label="Yvonne Ross in her Kilkenny jewellery studio" /></div>
     </section>
 
     <section className="editorial-story editorial-rings" aria-labelledby="rings-title">

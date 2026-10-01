@@ -9,6 +9,7 @@ const media = {
   bespoke: { src: "/images/yvonne-ross/bespoke-selection.jpg", alt: "Selection of jewellery shown on Yvonne Ross's bespoke page" },
   wedding: { src: "/images/yvonne-ross/blue-sapphire-halo.jpg", alt: "White gold halo ring with blue sapphire from Yvonne Ross's bespoke gallery" },
   material: { src: "/images/yvonne-ross/gold-band.jpg", alt: "Gold band with gemstones shown in Yvonne Ross's bespoke gallery" },
+  portrait: { src: "/images/yvonne-ross/yvonne-portrait.webp", alt: "Portrait of jewellery designer and goldsmith Yvonne Ross from her official website" },
 } as const;
 
 export type OfficialMediaKind = keyof typeof media;
