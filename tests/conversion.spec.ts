@@ -12,6 +12,8 @@ test("editorial home leads to bespoke, verified reviews and studio directions", 
   await expect(page.locator(".editorial-hero-link")).toHaveAttribute("href", /\/bespoke$/);
   const reviews = page.locator(".editorial-trust a");
   await expect(reviews).toContainText("4.6");
+  await expect(reviews).toContainText("Google reviews");
+  await expect(reviews).toContainText("As of 1 Oct 2026");
   await expect(reviews).toHaveAttribute("href", /google\.com\/maps/);
   await expect(page.locator(".work-piece")).toHaveCount(3);
   await expect(page.locator('a[href*="/shop"]')).toHaveCount(0);
@@ -32,6 +34,7 @@ test("mobile header stays visible with a working menu, call and designer portrai
   await expect(call).toHaveAttribute("href", "tel:+353877799430");
   await expect(call).toHaveAttribute("aria-label", /\+353 \(0\)87 779 9430/);
   expect((await call.boundingBox())!.x).toBeLessThan((await page.locator(".menu-toggle").boundingBox())!.x);
+  expect(Math.round((await page.locator(".editorial-hero h1").boundingBox())!.x)).toBe(22);
   await page.locator("#jewellery").scrollIntoViewIfNeeded();
   await expect(page.locator(".work-piece")).toHaveCount(3);
   await expect(page.locator(".work-piece").first().locator("img")).toHaveJSProperty("complete", true);
