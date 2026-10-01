@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { Artwork } from "./Artwork";
+import { OfficialMedia } from "./OfficialMedia";
 
-/** Replaceable H01/H02 slot. Without supplied assets the original concept study is shown. */
+/** Replaceable H01/H02 slot. The official gallery image is the default until a separately approved asset is supplied. */
 export function HeroMedia({ videoSrc, posterSrc, mobilePosterSrc }: {
   videoSrc?: string;
   posterSrc?: string;
@@ -30,9 +30,9 @@ export function HeroMedia({ videoSrc, posterSrc, mobilePosterSrc }: {
     };
   }, [videoSrc, posterSrc]);
   return <div className="hero-art-slot" data-media-slot="H01 desktop / H02 mobile" ref={slot}>
-    <Artwork kind="hero" label="Original abstract metal form study; not a Yvonne Ross product photograph" />
-    {posterSrc && <Image className="hero-poster" src={posterSrc} alt="Abstract sculptural metal campaign visual" fill sizes="100vw" priority />}
-    {mobilePosterSrc && <Image className="hero-mobile-poster" src={mobilePosterSrc} alt="Abstract sculptural metal campaign visual" fill sizes="100vw" priority />}
+    <OfficialMedia kind="hero" label="White gold halo ring with blue sapphire shown on Yvonne Ross Jewellery’s official website" priority />
+    {posterSrc && <Image className="hero-poster" src={posterSrc} alt="Yvonne Ross Jewellery hero photograph" fill sizes="100vw" priority />}
+    {mobilePosterSrc && <Image className="hero-mobile-poster" src={mobilePosterSrc} alt="Yvonne Ross Jewellery hero photograph" fill sizes="100vw" priority />}
     {playVideo && videoSrc && posterSrc && <video className="hero-video" src={videoSrc} poster={posterSrc} autoPlay loop muted playsInline preload="none" aria-hidden="true" />}
   </div>;
 }

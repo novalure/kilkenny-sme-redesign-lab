@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { basePath, studio } from "@/lib/yvonne";
@@ -21,7 +22,7 @@ export function Header() {
       <div className="concept-banner">Unofficial website redesign concept <span>·</span> Yvonne Ross Jewellery</div>
       <header className="site-header">
         <Link href={basePath} className="wordmark" aria-label="Yvonne Ross Jewellery, home" onClick={() => setOpen(false)}>
-          <span>YVONNE ROSS</span><small>JEWELLERY / KILKENNY</small>
+          <Image src="/images/yvonne-ross/official-logo.png" alt="Yvonne Ross Jewellery official logo" width={100} height={73} className="logo-image" priority />
         </Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
           {nav.map((item) => (
@@ -49,6 +50,7 @@ export function Footer() {
       <div className="footer-kicker"><span>YVONNE ROSS / KILKENNY</span><span>JEWELLERY · BESPOKE · STUDIO</span></div>
       <Link href={`${basePath}/contact`} className="footer-big-link" data-event="contact_header_click">LET&apos;S TALK<span aria-hidden="true">&gt;</span></Link>
       <div className="footer-wordmark" aria-hidden="true">YVONNE ROSS</div>
+      <a className="footer-logo" href={studio.officialSite} target="_blank" rel="noopener noreferrer" aria-label="Yvonne Ross Jewellery official website"><Image src="/images/yvonne-ross/official-logo.png" alt="Yvonne Ross Jewellery official logo" width={170} height={124} /></a>
       <div className="footer-bottom">
         <div><span>{studio.addressLine}, {studio.city}, {studio.country}</span><a href={studio.phoneHref}>{studio.phoneDisplay}</a><a href={`mailto:${studio.email}`}>{studio.email}</a></div>
         <div><Link href={basePath}>Home</Link><Link href={`${basePath}/bespoke`}>Bespoke</Link><Link href={`${basePath}/engagement-wedding`}>Engagement</Link><a href={studio.officialSite} target="_blank" rel="noopener noreferrer">Current official site &gt;</a></div>

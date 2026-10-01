@@ -1,19 +1,14 @@
 # Asset and rights register
 
-Checked 1 October 2026. No image or logo from the official site was copied into this repository.
+Updated 1 October 2026. V1 on `codex/redesign-yvonne-ross` retains its original concept illustrations. V2 now includes Yvonne Ross Jewellery's product photography and official logo at the user's request. The files are stored locally for this unpublished concept branch. Copyright, photographer credit and public reuse terms have not been independently confirmed; obtain the owner's permission before publishing or deploying this version.
 
-| Asset | Source / owner | Use | Reuse status | Public-demo-safe | Replace before public demo |
-|---|---|---|---|---|---|
-| Abstract ring and metalwork illustrations in `components/Artwork.tsx` and `app/globals.css` | Original code artwork made for this concept | Hero, product placeholders, stories | Original concept artwork | YES, with concept labels | Recommended for premium quality, not legally required |
-| Product names and brief material descriptors | https://www.yvonneross.com/shop and product pages; Yvonne Ross Jewellery | Product discovery | Factual reference and links only | YES | Recheck before public demo |
-| Product, studio, portrait and logo photography on official website | https://www.yvonneross.com/; Yvonne Ross Jewellery / photographer unknown | Studied as reference only | UNKNOWN | NO | YES, obtain rights before reuse |
-| Typographic Yvonne Ross wordmark in site header | Original text rendering, not official logo artwork | Recognisable name | Original concept rendering | YES for clearly unofficial concept | Replace with authorised brand asset if commissioned |
-| OpenStreetMap map tiles and geographic data | © OpenStreetMap contributors | Interactive location map | ODbL and tile policy; attribution displayed | YES for low-traffic concept under policy | Review provider for scaled public use |
-| Cormorant Garamond and Manrope fonts | Google Fonts / SIL Open Font License | Type system | Open font licences | YES | NO |
-| Google rating, 4.6 | Google Maps business listing | Dated snapshot trust signal | Public factual snapshot; display terms to review | Conditional | Re-verify or integrate Places API |
+| Asset | Source | Use | Status |
+|---|---|---|---|
+| Official product and bespoke photographs | [Yvonne Ross Jewellery](https://www.yvonneross.com/) and its Squarespace CDN | Hero, jewellery reel and editorial sections | Included for private review; public reuse permission unverified |
+| Official Yvonne Ross Jewellery logo | [Official site](https://www.yvonneross.com/) | Header and footer | Included for private review; public reuse permission unverified |
+| Product names and material descriptors | [Official shop](https://www.yvonneross.com/shop) and linked listings | Product discovery | Recheck before publication; availability is deliberately omitted |
+| OpenStreetMap map tiles and data | © OpenStreetMap contributors | Interactive map | Attribution shown; review tile provider for larger traffic |
+| Geist | Next.js font package | Type system | Self hosted, open font licence |
+| Google rating, 4.6 | Google Maps business listing | Dated review signal | Snapshot dated 1 October 2026; count omitted |
 
-No UNKNOWN-rights media is bundled or served by the app. Concept illustrations are labelled as such so they cannot be mistaken for actual inventory photographs.
-
-## V2 changes
-
-The V2 branch uses original CSS form studies in `components/Artwork.tsx` and `app/globals.css`, still labelled as abstract concept visuals. No official product, portrait, studio or logo images are bundled. The V2 font is **Geist**, self-hosted by Next.js under its open-source licence; the V1 Cormorant/Manrope pair is no longer used on this branch. `components/HeroMedia.tsx` provides future static and video slots; no video or generated Higgsfield media is configured. See `docs/yvonne-ross-higgsfield-asset-plan-v2.md` for mapping and rights conditions.
+Exact image URLs, local filenames and page uses are in [the official media register](./yvonne-ross-official-media-register.md). No portrait, studio interior, generated jewellery or video has been added. The site is labelled an unofficial redesign concept. The contact form sends nothing.

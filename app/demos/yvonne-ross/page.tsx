@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Artwork } from "@/components/Artwork";
+import { OfficialMedia } from "@/components/OfficialMedia";
 import { HeroMedia } from "@/components/HeroMedia";
 import { JewelleryReel } from "@/components/JewelleryReel";
 import { StudioSection } from "@/components/StudioSection";
@@ -43,24 +43,24 @@ export default async function YvonneHome() {
       </section>
 
       <section id="jewellery" className="jewellery-section" aria-labelledby="jewellery-title">
-        <div className="section-frame jewellery-intro"><span className="section-index">03 / SELECTED JEWELLERY</span><h2 id="jewellery-title">OBJECTS OF<br /><span>INTEREST.</span></h2><div><p>Selected pieces from Yvonne&apos;s current collection. Follow each piece to the official shop for its photography and current details.</p><a href={studio.officialShop} target="_blank" rel="noopener noreferrer" className="action-text" data-event="shop_click">Explore the official shop <span aria-hidden="true">&gt;</span></a></div></div>
+        <div className="section-frame jewellery-intro"><span className="section-index">03 / SELECTED JEWELLERY</span><h2 id="jewellery-title">OBJECTS OF<br /><span>INTEREST.</span></h2><div><p>Selected pieces and original photographs from Yvonne&apos;s shop. Check the official listings for current details and availability.</p><a href={studio.officialShop} target="_blank" rel="noopener noreferrer" className="action-text" data-event="shop_click">Explore the official shop <span aria-hidden="true">&gt;</span></a></div></div>
         <JewelleryReel />
       </section>
 
       <section className="bespoke-impact" aria-labelledby="bespoke-title">
-        <div className="impact-art" data-media-slot="H03"><Artwork kind="bespoke" label="Original abstract metal and geometry study for bespoke commissions" /></div>
-        <div className="impact-copy"><span className="section-index">04 / BESPOKE</span><h2 id="bespoke-title">AN IDEA.<br /><span>A FORM.</span></h2><p>Original commissions and remodelling begin with a conversation about what you have in mind.</p><Link href={`${basePath}/bespoke`} className="action action-outline-light" data-event="bespoke_enquiry_click">Explore bespoke <span aria-hidden="true">&gt;</span></Link></div>
+        <div className="impact-art" data-media-slot="H03"><OfficialMedia kind="bespoke" label="Jewellery selection photographed for Yvonne Ross’s bespoke page" /></div>
+        <div className="impact-copy"><span className="section-index">04 / BESPOKE</span><h2 id="bespoke-title">AN IDEA.<br /><span>A FORM.</span></h2><p>Yvonne creates one-off jewellery and remodels existing pieces. Each project begins with an initial design consultation.</p><Link href={`${basePath}/bespoke`} className="action action-outline-light" data-event="bespoke_enquiry_click">Explore bespoke <span aria-hidden="true">&gt;</span></Link></div>
         <div className="impact-bottom" aria-hidden="true"><span>PERSONAL COMMISSIONS</span><span>YVONNE ROSS / KILKENNY</span></div>
       </section>
 
       <section id="designer" className="designer-section section-frame" aria-labelledby="designer-title">
-        <div className="designer-lead"><span className="section-index">05 / THE DESIGNER</span><h2 id="designer-title">DESIGNER.<br />GOLDSMITH.<br /><span>KILKENNY.</span></h2><div className="designer-summary"><p>Yvonne Ross is a designer and goldsmith in Kilkenny. Her fine art background informs jewellery with clean lines and a sculptural, architectural character.</p><Link href={`${basePath}/contact`} className="action-text" data-event="contact_header_click">Contact Yvonne <span aria-hidden="true">&gt;</span></Link></div></div>
-        <div className="designer-visual" data-media-slot="H04"><Artwork kind="craft" label="Abstract studio atmosphere concept; not a portrait or photograph of Yvonne Ross's studio" /><span>FORM STUDY / CRAFT</span></div>
+        <div className="designer-lead"><span className="section-index">05 / THE DESIGNER</span><h2 id="designer-title">DESIGNER.<br />GOLDSMITH.<br /><span>KILKENNY.</span></h2><div className="designer-summary"><p>Yvonne Ross is a designer and goldsmith in Kilkenny. Her fine art background shapes jewellery with clean lines and simplicity informed by sculpture and architecture. She creates one-off pieces for private clients.</p><Link href={`${basePath}/contact`} className="action-text" data-event="contact_header_click">Contact Yvonne <span aria-hidden="true">&gt;</span></Link></div></div>
+        <div className="designer-visual" data-media-slot="H04"><OfficialMedia kind="craft" label="Geometric blue-stone ring photographed for Yvonne Ross’s bespoke gallery" /><span>FROM YVONNE’S BESPOKE GALLERY</span></div>
       </section>
 
-      <section className="engagement-section" aria-labelledby="engagement-title"><div className="engagement-visual" data-media-slot="H05"><Artwork kind="wedding" label="Abstract ring geometry concept, not an actual Yvonne Ross product" /></div><div className="engagement-content"><span className="section-index">06 / ENGAGEMENT & WEDDING</span><h2 id="engagement-title">MADE FOR<br /><span>YOUR MOMENT.</span></h2><p>Explore engagement rings and wedding bands, or discuss a design made around you.</p><Link href={`${basePath}/engagement-wedding`} className="action action-dark" data-event="engagement_enquiry_click">Discuss your ring <span aria-hidden="true">&gt;</span></Link></div></section>
+      <section className="engagement-section" aria-labelledby="engagement-title"><div className="engagement-visual" data-media-slot="H05"><OfficialMedia kind="wedding" label="White gold halo ring with blue sapphire from Yvonne Ross’s bespoke gallery" /></div><div className="engagement-content"><span className="section-index">06 / ENGAGEMENT & WEDDING</span><h2 id="engagement-title">MADE FOR<br /><span>YOUR MOMENT.</span></h2><p>Explore Yvonne’s alternative and traditional engagement rings and wedding bands, or discuss a design made around you.</p><Link href={`${basePath}/engagement-wedding`} className="action action-dark" data-event="engagement_enquiry_click">Discuss your ring <span aria-hidden="true">&gt;</span></Link></div></section>
 
-      <section className="material-section section-frame" aria-labelledby="material-title"><div><span className="section-index">07 / MATERIAL & METHOD</span><h2 id="material-title">PRECISION<br />HAS PRESENCE.</h2><p>Yvonne&apos;s practice brings fine art, traditional goldsmithing and a considered approach to gemstones together. Her Gem-A Diamond Diploma informs conversations about diamond rings.</p></div><div className="material-visual" data-media-slot="H06"><Artwork kind="material" label="Abstract metal surface concept artwork" /></div></section>
+      <section className="material-section section-frame" aria-labelledby="material-title"><div><span className="section-index">07 / MATERIAL & METHOD</span><h2 id="material-title">PRECISION<br />HAS PRESENCE.</h2><p>Yvonne works with traditional goldsmithing skills and a personally selected collection of gemstones. Her Gem-A Diamond Diploma informs conversations about diamond rings.</p></div><div className="material-visual" data-media-slot="H06"><OfficialMedia kind="material" label="Gold band with gemstones photographed for Yvonne Ross’s bespoke gallery" /></div></section>
 
       <StudioSection />
 

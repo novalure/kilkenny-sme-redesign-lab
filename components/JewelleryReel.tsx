@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { Artwork } from "@/components/Artwork";
+import { OfficialMedia } from "@/components/OfficialMedia";
 import { pieces } from "@/lib/yvonne";
 
 export function JewelleryReel() {
@@ -42,9 +42,9 @@ export function JewelleryReel() {
               aria-label={`View ${piece.name} on Yvonne Ross's official shop`}
               data-event="product_enquiry_click"
             >
-              <Artwork
+              <OfficialMedia
                 kind={piece.art}
-                label={`Abstract concept visual for ${piece.name}; actual product photograph on the official shop`}
+                label={`${piece.name}, photographed for Yvonne Ross Jewellery`}
               />
               <span className="reel-view">View piece <span aria-hidden="true">&gt;</span></span>
             </a>
@@ -56,7 +56,7 @@ export function JewelleryReel() {
           </article>
         ))}
       </div>
-      <p className="reel-disclosure">Abstract concept visuals. See the official listings for actual product photography and availability.</p>
+      <p className="reel-disclosure">Photographs from Yvonne Ross’s official listings. Check the official shop for current availability and details.</p>
     </div>
   );
 }
