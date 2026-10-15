@@ -15,7 +15,10 @@ export default async function YvonneHome() {
         <span className="editorial-kicker">YVONNE ROSS · DESIGNER & GOLDSMITH</span>
         <h1 id="home-title">Jewellery, made personal.</h1>
         <p>Thoughtful pieces and one-off commissions, designed in Kilkenny.</p>
-        <Link href={`${basePath}/bespoke`} className="editorial-hero-link" data-event="bespoke_enquiry_click">Explore bespoke jewellery <span aria-hidden="true">&gt;</span></Link>
+        <div className="editorial-hero-actions">
+          <Link href={`${basePath}/contact?interest=Bespoke%20Commission`} className="action action-dark" data-event="bespoke_enquiry_click">Book a design consultation <span aria-hidden="true">&gt;</span></Link>
+          <Link href={`${basePath}/bespoke`} className="editorial-hero-link">Explore bespoke jewellery <span aria-hidden="true">&gt;</span></Link>
+        </div>
       </div>
     </section>
 
@@ -47,12 +50,12 @@ export default async function YvonneHome() {
     </section>
 
     <section id="designer" className="editorial-designer" aria-labelledby="designer-title">
-      <div className="editorial-designer-copy"><span className="editorial-kicker">MEET THE MAKER</span><h2 id="designer-title">Meet Yvonne.</h2><p>Yvonne Ross is an award-winning Irish designer and goldsmith with a boutique studio near Kilkenny Castle. She selects gemstones for their individual beauty and creates one-off jewellery with her clients. Her Gem-A Diamond Diploma also guides her work with diamond rings.</p><Link href={`${basePath}/contact`} className="editorial-link" data-event="contact_header_click">Speak with Yvonne <span aria-hidden="true">&gt;</span></Link></div>
-      <div className="editorial-designer-image"><OfficialMedia kind="portrait" label="Yvonne Ross in her Kilkenny jewellery studio" /></div>
+      <div className="editorial-designer-copy"><span className="editorial-kicker">MEET THE MAKER</span><h2 id="designer-title">Meet Yvonne.</h2><p>Yvonne Ross is an Irish jewellery designer and goldsmith working from a boutique studio near Kilkenny Castle. She hand-selects gemstones for their individual beauty and creates one-off pieces in collaboration with her clients. Her Gem-A Diamond Diploma provides added expertise when choosing diamonds for engagement and wedding rings.</p><Link href={`${basePath}/contact?interest=Bespoke%20Commission`} className="editorial-link" data-event="contact_header_click">Book a consultation <span aria-hidden="true">&gt;</span></Link></div>
+      <div className="editorial-designer-image"><OfficialMedia kind="portrait" label="Portrait of Yvonne Ross, jewellery designer and goldsmith" /></div>
     </section>
 
     <section className="editorial-story editorial-rings" aria-labelledby="rings-title">
-      <div className="editorial-story-image"><OfficialMedia kind="wedding" label="White gold halo ring with blue sapphire from Yvonne Ross’s gallery" /></div>
+      <div className="editorial-story-image"><OfficialMedia kind="wedding" label="Geometric gold ring with blue sapphires and a diamond from Yvonne Ross’s bespoke work" /></div>
       <div className="editorial-story-copy"><span className="editorial-kicker">ENGAGEMENT & WEDDING</span><h2 id="rings-title">For a moment that lasts.</h2><p>Explore alternative and traditional engagement rings and wedding bands, or begin a personal design with Yvonne.</p><Link href={`${basePath}/engagement-wedding`} className="editorial-link" data-event="engagement_enquiry_click">Explore rings <span aria-hidden="true">&gt;</span></Link></div>
     </section>
 

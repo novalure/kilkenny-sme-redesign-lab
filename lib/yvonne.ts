@@ -22,6 +22,11 @@ export const studio = {
 
 export const basePath = "/demos/yvonne-ross";
 
+export const socialLinks = {
+  instagram: "https://www.instagram.com/yvonnerossjewellery/",
+  facebook: "https://www.facebook.com/YvonneRossJewellery/",
+} as const;
+
 export const pieces = [
   {
     name: "Diamond Flower Ring",

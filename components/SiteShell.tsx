@@ -3,8 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { basePath, studio } from "@/lib/yvonne";
+import { useEffect, useRef, useState } from "react";
+import { basePath, socialLinks, studio } from "@/lib/yvonne";
 
 const nav = [
   { label: "Jewellery", href: `${basePath}#jewellery` },
@@ -16,7 +16,22 @@ const nav = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
+
+  useEffect(() => {
+    if (!open) return;
+
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key !== "Escape") return;
+      setOpen(false);
+      menuButtonRef.current?.focus();
+    }
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [open]);
+
   return (
     <>
       <div className="concept-banner">Unofficial Yvonne Ross Jewellery design concept <span className="banner-location"><span aria-hidden="true">·</span> Kilkenny, Ireland</span></div>
@@ -30,16 +45,16 @@ export function Header() {
           ))}
         </nav>
         <Link className="header-contact" href={`${basePath}/contact`} data-event="contact_header_click">
-          Make an enquiry <span aria-hidden="true">&gt;</span>
+          Book a consultation <span aria-hidden="true">&gt;</span>
         </Link>
         <a className="mobile-header-call" href={studio.phoneHref} aria-label={`Call Yvonne Ross Jewellery at ${studio.phoneDisplay}`} data-event="mobile_call_click">Call</a>
-        <button className={`menu-toggle ${open ? "is-open" : ""}`} type="button" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(!open)}>
+        <button ref={menuButtonRef} className={`menu-toggle ${open ? "is-open" : ""}`} type="button" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(!open)}>
           <span className="hamburger-lines" aria-hidden="true"><span /><span /><span /></span>
         </button>
       </header>
       <nav id="mobile-menu" className={`mobile-menu ${open ? "is-open" : ""}`} aria-label="Mobile navigation" inert={!open}>
         {nav.map((item) => <Link key={item.label} href={item.href} onClick={() => setOpen(false)}>{item.label}<span aria-hidden="true">&gt;</span></Link>)}
-        <Link href={`${basePath}/contact`} onClick={() => setOpen(false)} data-event="contact_header_click">Make an enquiry <span aria-hidden="true">&gt;</span></Link>
+        <Link href={`${basePath}/contact`} onClick={() => setOpen(false)} data-event="contact_header_click">Book a consultation <span aria-hidden="true">&gt;</span></Link>
       </nav>
       </div>
     </>
@@ -51,11 +66,12 @@ export function Footer() {
     <footer className="site-footer">
       <div className="footer-kicker"><span>YVONNE ROSS JEWELLERY</span><span>DESIGNER & GOLDSMITH · KILKENNY</span></div>
       <h2 className="footer-heading">A conversation is where it begins.</h2>
-      <Link href={`${basePath}/contact`} className="footer-big-link" data-event="contact_header_click">Contact the studio <span aria-hidden="true">&gt;</span></Link>
+      <Link href={`${basePath}/contact?interest=Bespoke%20Commission`} className="footer-big-link" data-event="contact_header_click">Book a design consultation <span aria-hidden="true">&gt;</span></Link>
       <a className="footer-logo" href={studio.officialSite} target="_blank" rel="noopener noreferrer" aria-label="Yvonne Ross Jewellery official website"><Image src="/images/yvonne-ross/official-logo.png" alt="Yvonne Ross Jewellery official logo" width={138} height={101} /></a>
       <div className="footer-bottom">
         <div><span>{studio.addressLine}, {studio.city}, {studio.country}</span><a href={studio.phoneHref}>{studio.phoneDisplay}</a><a href={`mailto:${studio.email}`}>{studio.email}</a></div>
         <div><Link href={basePath}>Home</Link><Link href={`${basePath}/bespoke`}>Bespoke</Link><Link href={`${basePath}/engagement-wedding`}>Engagement</Link><a href={studio.officialSite} target="_blank" rel="noopener noreferrer">Current official site &gt;</a></div>
+        <div className="footer-social" role="group" aria-label="Yvonne Ross Jewellery on social media"><a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" data-event="instagram_click">Instagram &gt;</a><a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" data-event="facebook_click">Facebook &gt;</a></div>
       </div>
       <p className="footer-disclaimer">Unofficial website redesign concept · No enquiries are sent from this demo.</p>
     </footer>

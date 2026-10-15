@@ -8,7 +8,9 @@ test("editorial home leads to bespoke, verified reviews and studio directions", 
   const contact = page.locator(".header-contact");
   await expect(contact).toBeVisible();
   await expect(contact).toHaveAttribute("data-event", "contact_header_click");
+  await expect(contact).toContainText("Book a consultation");
   await expect(page.locator(".editorial-hero h1")).toContainText("Jewellery, made personal.");
+  await expect(page.locator(".editorial-hero-actions .action")).toHaveAttribute("href", /contact\?interest=Bespoke%20Commission$/);
   await expect(page.locator(".editorial-hero-link")).toHaveAttribute("href", /\/bespoke$/);
   const reviews = page.locator(".editorial-trust a");
   await expect(reviews).toContainText("4.6");
@@ -16,7 +18,11 @@ test("editorial home leads to bespoke, verified reviews and studio directions", 
   await expect(reviews).not.toContainText("As of");
   await expect(reviews).toHaveAttribute("href", /google\.com\/maps/);
   await expect(page.locator(".work-piece")).toHaveCount(3);
+  await expect(page.locator(".work-piece-link").first()).toHaveAttribute("href", /interest=A%20Piece%20I%20Saw%20Online$/);
+  await expect(page.locator(".editorial-rings img")).toHaveAttribute("src", /blue-geometric-ring/);
   await expect(page.locator('a[href*="/shop"]')).toHaveCount(0);
+  await expect(page.locator('a[data-event="instagram_click"]').last()).toHaveAttribute("href", "https://www.instagram.com/yvonnerossjewellery/");
+  await expect(page.locator('a[data-event="facebook_click"]')).toHaveAttribute("href", "https://www.facebook.com/YvonneRossJewellery/");
   await page.locator(".studio-map-col").scrollIntoViewIfNeeded();
   await expect(page.locator(".leaflet-control-attribution")).toContainText("OpenStreetMap contributors");
   await expect(page.locator(".studio-actions a").first()).toHaveAttribute("href", /google\.com\/maps\/dir/);
@@ -46,18 +52,25 @@ test("mobile header stays visible with a working menu, call and designer portrai
   await expect(page.locator(".menu-toggle")).toHaveAttribute("aria-expanded", "true");
   const navigation = page.getByRole("navigation", { name: "Mobile navigation" });
   await expect(navigation.getByRole("link", { name: /bespoke/i })).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(page.locator(".menu-toggle")).toHaveAttribute("aria-expanded", "false");
+  await expect(menu).toBeFocused();
+  await menu.click();
   await navigation.getByRole("link", { name: /about/i }).click();
   await expect(page).toHaveURL(/#designer$/);
   await expect(page.locator(".menu-toggle")).toHaveAttribute("aria-expanded", "false");
   await expect(page.locator(".editorial-designer-image img")).toHaveJSProperty("complete", true);
   expect(await page.locator(".editorial-designer-image img").evaluate((image: HTMLImageElement) => image.naturalWidth)).toBeGreaterThan(0);
+  await expect(page.locator(".editorial-designer-image img")).toHaveAttribute("alt", "Portrait of Yvonne Ross, jewellery designer and goldsmith");
   await expect(page.locator("#designer")).toContainText("Gem-A Diamond Diploma");
+  await expect(page.locator("#designer")).not.toContainText("award-winning");
+  expect((await page.locator(".editorial-hero-actions .action").boundingBox())!.height).toBeGreaterThanOrEqual(44);
 });
 
 test("secondary routes expose calls to action and preserve the map", async ({ page }) => {
   for (const [route, action] of [
-    ["bespoke", /discuss a commission/i],
-    ["engagement-wedding", /discuss your ring/i],
+    ["bespoke", /book a design consultation/i],
+    ["engagement-wedding", /book a ring consultation/i],
   ] as const) {
     await page.goto(`${base}/${route}`);
     await expect(page.locator(".route-hero h1")).toBeVisible();
@@ -85,4 +98,21 @@ test("demo enquiry validates phone preference and sends no request", async ({ pa
   await page.getByRole("button", { name: /send my enquiry/i }).click();
   await expect(page.getByText("Enquiry flow preview complete.")).toBeVisible();
   expect(outgoing).toEqual([]);
+});
+
+test("core page remains usable without horizontal overflow across common viewports", async ({ page }) => {
+  for (const viewport of [
+    { width: 320, height: 568 },
+    { width: 360, height: 800 },
+    { width: 390, height: 844 },
+    { width: 768, height: 1024 },
+    { width: 1024, height: 768 },
+    { width: 1366, height: 768 },
+    { width: 1440, height: 900 },
+  ]) {
+    await page.setViewportSize(viewport);
+    await page.goto(base);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(viewport.width);
+    await expect(page.locator(".editorial-hero-actions .action")).toBeVisible();
+  }
 });
