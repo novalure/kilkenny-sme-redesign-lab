@@ -1,0 +1,5 @@
+import type { Metadata } from "next";
+import { PageIntro } from "@/components/UI";
+import { AppointmentForm } from "./AppointmentForm";
+export const metadata: Metadata = { title: "Appointment form preview", description: "A browser-only demonstration of a clearer appointment enquiry form. No information is sent." };
+export default function Appointment() { return <><PageIntro eyebrow="INTERACTION DEMO" title="An easier way to ask." intro="This form demonstrates the proposed experience. It does not submit an appointment request." tone="dark" /><section className="section-pad form-section"><div className="container form-layout"><div><span className="eyebrow">CONTACT DIRECTLY</span><h2>Ready to reach the<br /><em>real practice?</em></h2><p>For actual appointments or questions, use the published contact details.</p><a className="form-contact-link" href="tel:+353567775126">(056) 777 5126 <span aria-hidden="true">↗</span></a><a className="form-email" href="mailto:orthojoints.auteven@upmc.ie">orthojoints.auteven@upmc.ie</a></div><AppointmentForm /></div></section></>; }
