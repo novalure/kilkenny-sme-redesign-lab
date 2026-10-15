@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { SocialIcon } from "@/components/SocialIcon";
 import { basePath, socialLinks, studio } from "@/lib/yvonne";
 
 const nav = [
@@ -13,6 +14,15 @@ const nav = [
   { label: "Studio", href: `${basePath}#visit` },
   { label: "About", href: `${basePath}#designer` },
 ];
+
+function SocialLinks({ className }: { className: string }) {
+  return (
+    <div className={className} role="group" aria-label="Yvonne Ross Jewellery on social media">
+      <a className="social-icon-link" href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" data-event="instagram_click" aria-label="Instagram" title="Instagram"><SocialIcon platform="instagram" /></a>
+      <a className="social-icon-link" href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" data-event="facebook_click" aria-label="Facebook" title="Facebook"><SocialIcon platform="facebook" /></a>
+    </div>
+  );
+}
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -39,6 +49,7 @@ export function Header() {
         <Link href={basePath} className="wordmark" aria-label="Yvonne Ross Jewellery, home" onClick={() => setOpen(false)}>
           <Image src="/images/yvonne-ross/official-logo.png" alt="Yvonne Ross Jewellery official logo" width={152} height={111} className="logo-image" priority />
         </Link>
+        <SocialLinks className="header-social" />
         <nav className="desktop-nav" aria-label="Primary navigation">
           {nav.map((item) => (
             <Link key={item.label} href={item.href} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</Link>
@@ -55,6 +66,7 @@ export function Header() {
       <nav id="mobile-menu" className={`mobile-menu ${open ? "is-open" : ""}`} aria-label="Mobile navigation" inert={!open}>
         {nav.map((item) => <Link key={item.label} href={item.href} onClick={() => setOpen(false)}>{item.label}<span aria-hidden="true">&gt;</span></Link>)}
         <Link href={`${basePath}/contact`} onClick={() => setOpen(false)} data-event="contact_header_click">Book a consultation <span aria-hidden="true">&gt;</span></Link>
+        <SocialLinks className="mobile-menu-social" />
       </nav>
       </div>
     </>
@@ -71,7 +83,7 @@ export function Footer() {
       <div className="footer-bottom">
         <div><span>{studio.addressLine}, {studio.city}, {studio.country}</span><a href={studio.phoneHref}>{studio.phoneDisplay}</a><a href={`mailto:${studio.email}`}>{studio.email}</a></div>
         <div><Link href={basePath}>Home</Link><Link href={`${basePath}/bespoke`}>Bespoke</Link><Link href={`${basePath}/engagement-wedding`}>Engagement</Link><a href={studio.officialSite} target="_blank" rel="noopener noreferrer">Current official site &gt;</a></div>
-        <div className="footer-social" role="group" aria-label="Yvonne Ross Jewellery on social media"><a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" data-event="instagram_click">Instagram &gt;</a><a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" data-event="facebook_click">Facebook &gt;</a></div>
+        <SocialLinks className="footer-social" />
       </div>
       <p className="footer-disclaimer">Unofficial website redesign concept · No enquiries are sent from this demo.</p>
     </footer>

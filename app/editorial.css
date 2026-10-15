@@ -36,6 +36,9 @@ p { line-height:1.65; }
 .desktop-nav { grid-column:1/-1; grid-row:2; margin:0; justify-self:center; gap:clamp(20px,3vw,48px); }
 .desktop-nav a { color:#252a27; font-size:.72rem; font-weight:540; letter-spacing:.07em; text-transform:uppercase; }
 .desktop-nav a:hover,.desktop-nav a[aria-current="page"] { color:#53776f; border-bottom:1px solid currentColor; }
+.header-social { display:flex; grid-column:1; grid-row:1; align-self:center; justify-self:start; gap:8px; }
+.header-social .social-icon-link { display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid #c5cfca; border-radius:50%; color:#263b35; transition:color .2s,border-color .2s,background .2s; }
+.header-social .social-icon-link:hover { color:#fff; border-color:#426671; background:#426671; }
 .header-contact { grid-column:3; grid-row:1; justify-self:end; align-self:center; width:auto; min-width:0; min-height:44px; padding:8px 0; border:0; border-bottom:1px solid #232927; font-size:.67rem; font-weight:550; letter-spacing:.07em; }
 .header-contact span { color:#161b19; font-size:1rem; }
 .mobile-menu { top:179px; color:#161b19; background:white; }
@@ -79,6 +82,9 @@ p { line-height:1.65; }
 .selected-work { text-align:center; }
 .gallery-note { margin:55px auto 20px; max-width:520px; font-size:.88rem; color:#5a645d; }
 .gallery-actions { display:flex; flex-wrap:wrap; justify-content:center; gap:12px 34px; }
+.social-icon { display:block; width:20px; height:20px; flex:0 0 auto; }
+.social-text-link { gap:12px; }
+.social-text-link > span:last-child { margin-left:14px; }
 .editorial-story,.editorial-designer { display:grid; grid-template-columns:1fr 1fr; min-height:640px; background:#eef3f0; }
 .editorial-story-image,.editorial-designer-image { min-height:640px; }
 .editorial-story-image .official-media,.editorial-designer-image .official-media { min-height:inherit; }
@@ -116,7 +122,9 @@ p { line-height:1.65; }
 .footer-logo { margin:0 auto 55px; padding:0; background:transparent; }
 .footer-logo img { width:138px; }
 .footer-bottom { border-color:#c9d2cb; margin-top:0; }
-.footer-social { margin-left:auto; }
+.footer-bottom > .footer-social { align-items:center; gap:12px; margin-left:auto; }
+.footer-social .social-icon-link { display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid #718587; border-radius:50%; color:#f8fbf9; transition:color .2s,border-color .2s,background .2s; }
+.footer-social .social-icon-link:hover { color:#182e34; border-color:#b5d2d1; background:#b5d2d1; }
 .footer-disclaimer { color:#596a60; font-size:.625rem; }
 .route-hero { min-height:700px; display:grid; grid-template-columns:1fr 1fr; align-items:stretch; color:#161b19; background:white; }
 .route-art { position:relative; inset:auto; grid-column:2; grid-row:1; min-height:700px; }
@@ -155,6 +163,10 @@ p { line-height:1.65; }
   .mobile-menu { top:147px; }
   .desktop-nav { gap:16px; }
   .desktop-nav a { font-size:.62rem; }
+  .header-social { display:none; }
+  .mobile-menu-social { display:flex; gap:10px; padding-top:18px; }
+  .mobile-menu .mobile-menu-social .social-icon-link { align-items:center; justify-content:center; width:44px; height:44px; padding:0; border:1px solid #b9c9be; border-radius:50%; color:#263b35; font-size:initial; }
+  .mobile-menu .mobile-menu-social .social-icon-link:hover { color:#fff; border-color:#426671; background:#426671; }
   .editorial-story-copy,.editorial-designer-copy { padding:70px 6vw; }
   .route-hero { min-height:570px; }
   .route-art { min-height:570px; }
@@ -212,7 +224,7 @@ p { line-height:1.65; }
   .footer-bottom { display:block; }
   .footer-bottom > div { display:flex; flex-direction:column; align-items:start; gap:10px; margin-bottom:24px; }
   .footer-bottom a { display:inline-flex; align-items:center; min-height:44px; }
-  .footer-social { margin-left:0; }
+  .footer-bottom > .footer-social { flex-direction:row; gap:12px; margin-left:0; }
   .route-hero { display:flex; flex-direction:column; min-height:0; }
   .route-art { width:100%; min-height:390px; order:1; }
   .route-hero-content { padding:72px 22px 80px; order:2; }

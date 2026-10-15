@@ -9,6 +9,8 @@ test("editorial home leads to bespoke, verified reviews and studio directions", 
   await expect(contact).toBeVisible();
   await expect(contact).toHaveAttribute("data-event", "contact_header_click");
   await expect(contact).toContainText("Book a consultation");
+  await expect(page.locator(".header-social .social-icon-link")).toHaveCount(2);
+  await expect(page.locator(".header-social")).toBeVisible();
   await expect(page.locator(".editorial-hero h1")).toContainText("Jewellery, made personal.");
   await expect(page.locator(".editorial-hero-actions .action")).toHaveAttribute("href", /contact\?interest=Bespoke%20Commission$/);
   await expect(page.locator(".editorial-hero-link")).toHaveAttribute("href", /\/bespoke$/);
@@ -21,8 +23,14 @@ test("editorial home leads to bespoke, verified reviews and studio directions", 
   await expect(page.locator(".work-piece-link").first()).toHaveAttribute("href", /interest=A%20Piece%20I%20Saw%20Online$/);
   await expect(page.locator(".editorial-rings img")).toHaveAttribute("src", /blue-geometric-ring/);
   await expect(page.locator('a[href*="/shop"]')).toHaveCount(0);
-  await expect(page.locator('a[data-event="instagram_click"]').last()).toHaveAttribute("href", "https://www.instagram.com/yvonnerossjewellery/");
-  await expect(page.locator('a[data-event="facebook_click"]')).toHaveAttribute("href", "https://www.facebook.com/YvonneRossJewellery/");
+  const instagram = page.locator('.footer-social a[data-event="instagram_click"]');
+  const facebook = page.locator('.footer-social a[data-event="facebook_click"]');
+  await expect(instagram).toHaveAttribute("href", "https://www.instagram.com/yvonnerossjewellery/");
+  await expect(instagram).toHaveAttribute("aria-label", "Instagram");
+  await expect(instagram.locator("svg")).toHaveCount(1);
+  await expect(facebook).toHaveAttribute("href", "https://www.facebook.com/YvonneRossJewellery/");
+  await expect(facebook).toHaveAttribute("aria-label", "Facebook");
+  await expect(facebook.locator("svg")).toHaveCount(1);
   await page.locator(".studio-map-col").scrollIntoViewIfNeeded();
   await expect(page.locator(".leaflet-control-attribution")).toContainText("OpenStreetMap contributors");
   await expect(page.locator(".studio-actions a").first()).toHaveAttribute("href", /google\.com\/maps\/dir/);
@@ -52,6 +60,8 @@ test("mobile header stays visible with a working menu, call and designer portrai
   await expect(page.locator(".menu-toggle")).toHaveAttribute("aria-expanded", "true");
   const navigation = page.getByRole("navigation", { name: "Mobile navigation" });
   await expect(navigation.getByRole("link", { name: /bespoke/i })).toBeVisible();
+  await expect(navigation.locator(".mobile-menu-social .social-icon-link")).toHaveCount(2);
+  await expect(navigation.locator(".mobile-menu-social")).toBeVisible();
   await page.keyboard.press("Escape");
   await expect(page.locator(".menu-toggle")).toHaveAttribute("aria-expanded", "false");
   await expect(menu).toBeFocused();
