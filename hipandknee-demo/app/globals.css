@@ -105,3 +105,26 @@ html{scroll-padding-top:108px}
 @media(max-width:900px){.header-inner{min-height:76px}.knee-motion-art{width:500px}}
 @media(max-width:650px){.header-inner{min-height:72px}.hero-caption{display:none}.hero-copy{padding-bottom:0}.hero-visual{height:400px}.knee-motion-art{width:400px}.hero-doctor{bottom:12px}.visual-index{right:0}}
 @media(prefers-reduced-motion:reduce){.knee-orbit,.knee-tibia,.knee-patella,.knee-joint-marker{animation:none;transform:none}}
+
+/* Keep the call action and navigation available while patients browse on phones. */
+.strip-mobile,.mobile-header-actions{display:none}
+@media(max-width:900px){
+  .demo-strip{position:fixed;top:0;left:0;right:0;z-index:31;height:26px;min-height:0;padding:0 10px;white-space:nowrap;font-size:9px;letter-spacing:.06em}
+  .strip-desktop{display:none}
+  .strip-mobile{display:inline}
+  .site-header{position:fixed;top:26px;left:0;right:0;z-index:30}
+  #main-content{padding-top:105px}
+  .mobile-header-actions{display:flex;align-items:center;gap:8px;flex:none}
+  .mobile-call{width:48px;height:48px;display:grid;place-items:center;background:#2ac6f9;color:#024278;transition:background .2s,transform .2s}
+  .mobile-call:hover{background:#a7e8fa;transform:translateY(-2px)}
+  .mobile-menu summary{border-color:#b2d9ed;color:#fff}
+  .mobile-menu nav{background:#fff;color:#024278}
+}
+@media(max-width:650px){
+  #main-content{padding-top:101px}
+}
+@media(max-width:380px){
+  .wordmark img{width:170px}
+  .menu-label{display:none}
+  .mobile-menu summary{width:48px;min-height:48px;justify-content:center;padding:0}
+}
