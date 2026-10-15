@@ -16,6 +16,8 @@ npm run start
 
 The only client-side interaction is a browser-only appointment form preview. It submits no network request and saves no data. The call, email and map links open external applications when selected.
 
+The home hero includes a custom decorative SVG knee study. Its tibia moves through a small, slow rotation; no video, external animation library, or data request is needed. It is hidden from assistive technology, and `prefers-reduced-motion` stops the animation. This graphic is a visual metaphor, not a clinical or diagnostic illustration.
+
 ## Original visual assets
 
 Files under `public/brand/` are unchanged copies from `https://www.hipandkneesurgery.ie/images/`: `prof-stuart-edwards-logo.png`, `stuart-edwards-profile-photo.jpg`, `flash-banner.jpg`, `1.jpg` through `4.jpg`, `hip-osteoarthritis.jpg`, and `knee-osteoarthritis.jpg`. The source images are small, so they are presented as contained illustrations and a modest portrait instead of enlarged full-width photography. `public/social-card.png` is a new layout that includes the original logo and hip illustration. The demo must remain clearly marked as an independent concept until practice approval.

@@ -83,3 +83,25 @@ h1 em,h2 em,blockquote em{color:#004e96}
 :focus-visible{outline-color:#ffb34f}
 @media(max-width:900px){.wordmark img{width:218px;height:auto}.hero-doctor{right:20px;bottom:38px}.care-illustration,.care-knee .care-illustration{top:75px;right:20px}.detail-original{right:8%;bottom:15px}}
 @media(max-width:600px){.wordmark img{width:185px}.hero-doctor{right:5px;bottom:18px;gap:10px;padding:7px 10px 7px 7px}.hero-doctor img{width:65px;height:68px}.hero-doctor strong{font-size:17px}.hero-doctor a{font-size:10px}.hero-visual .orbit-art{width:410px}.care-illustration,.care-knee .care-illustration{top:58px;right:23px;width:175px}.care-illustration img{width:175px;height:auto}.approach-ring{width:250px;height:250px}.approach-logo{width:192px}.portrait-art{min-height:430px}.portrait-frame img{width:150px;height:158px}.portrait-name{font-size:42px}.detail-original{width:165px;height:auto;right:10%;bottom:8px}.condition-images{gap:10px;padding:15px}}
+
+/* A restrained, decorative knee study gives the home hero its own motion identity. */
+html{scroll-padding-top:108px}
+.site-header{position:sticky;top:0;background:#044670f2;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 12px 34px #022d4a18}
+.detail-aside{top:120px}
+.header-inner{min-height:88px}
+.desktop-nav a{position:relative;padding:9px 0}
+.desktop-nav a:after{content:"";position:absolute;right:0;bottom:1px;left:0;height:1px;background:#8ee4fc;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.desktop-nav a:hover:after,.desktop-nav a:focus-visible:after{transform:scaleX(1)}
+.hero-visual:before{display:none}
+.knee-motion-art{width:610px;max-width:none;height:auto;flex:none;overflow:visible;filter:drop-shadow(0 28px 55px #002e5e55)}
+.knee-orbit{animation:knee-orbit 48s linear infinite;transform-box:view-box;transform-origin:310px 326px}
+.knee-tibia{animation:knee-flex 8s ease-in-out infinite;transform-box:view-box;transform-origin:310px 391px}
+.knee-patella{animation:knee-patella 8s ease-in-out infinite}
+.knee-joint-marker{animation:knee-marker 5s ease-in-out infinite}
+@keyframes knee-orbit{to{transform:rotate(360deg)}}
+@keyframes knee-flex{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(5deg)}}
+@keyframes knee-patella{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes knee-marker{0%,100%{opacity:.65}50%{opacity:1}}
+@media(max-width:900px){.header-inner{min-height:76px}.knee-motion-art{width:500px}}
+@media(max-width:650px){.header-inner{min-height:72px}.hero-caption{display:none}.hero-copy{padding-bottom:0}.hero-visual{height:400px}.knee-motion-art{width:400px}.hero-doctor{bottom:12px}.visual-index{right:0}}
+@media(prefers-reduced-motion:reduce){.knee-orbit,.knee-tibia,.knee-patella,.knee-joint-marker{animation:none;transform:none}}
