@@ -1,9 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export function SiteFooter() {
   return <footer className="site-footer">
     <div className="container footer-main">
-      <div className="footer-lead"><span className="eyebrow light">TAKE THE NEXT STEP</span><h2>Care begins with<br /><em>a conversation.</em></h2><p>For appointments and enquiries, contact the practice directly.</p><a className="button button-light" href="tel:+353567775126">Call (056) 777 5126 <span aria-hidden="true">↗</span></a></div>
+      <div className="footer-lead"><Image className="footer-brand" src="/brand/prof-stuart-edwards-logo.png" width={278} height={58} alt="Prof. Stuart Edwards — Hip and Knee Surgeon" /><span className="eyebrow light">TAKE THE NEXT STEP</span><h2>Care begins with<br /><em>a conversation.</em></h2><p>For appointments and enquiries, contact the practice directly.</p><a className="button button-light" href="tel:+353567775126">Call (056) 777 5126 <span aria-hidden="true">↗</span></a></div>
       <div className="footer-columns">
         <div><h3>Explore</h3><Link href="/hip">Hip care</Link><Link href="/knee">Knee care</Link><Link href="/additional-care">Other care</Link><Link href="/patient-information">Patient guide</Link></div>
         <div><h3>Practice</h3><Link href="/about">About Prof. Edwards</Link><Link href="/for-gps">For GPs</Link><Link href="/faq">Questions & answers</Link><Link href="/contact">Contact & location</Link></div>

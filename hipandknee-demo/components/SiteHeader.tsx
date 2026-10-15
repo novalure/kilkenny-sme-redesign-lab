@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const nav = [
   ["Hip", "/hip"],
@@ -13,9 +14,8 @@ export function SiteHeader() {
     <div className="demo-strip"><span className="strip-dot" />Independent redesign concept <span className="strip-separator">·</span> This is not the official practice website</div>
     <header className="site-header">
       <div className="container header-inner">
-        <Link className="wordmark" href="/" aria-label="Stuart Edwards Orthopaedic Surgery, home">
-          <span className="wordmark-symbol" aria-hidden="true"><span /></span>
-          <span><strong>Stuart Edwards</strong><small>Orthopaedic Surgery · Kilkenny</small></span>
+        <Link className="wordmark" href="/" aria-label="Prof. Stuart Edwards, home">
+          <Image src="/brand/prof-stuart-edwards-logo.png" width={278} height={58} alt="Prof. Stuart Edwards — Hip and Knee Surgeon" priority />
         </Link>
         <nav className="desktop-nav" aria-label="Main navigation">
           {nav.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}

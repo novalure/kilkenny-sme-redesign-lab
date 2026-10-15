@@ -2,7 +2,7 @@
 
 An English-language website concept for an Irish orthopaedic practice. Built with Next.js 16.4.1, React 19.3.1 and TypeScript 5.9.3. The app is intentionally public but `noindex, nofollow` in HTML metadata and the `X-Robots-Tag` response header.
 
-This is **not the official practice website**. Company details and procedure topics were taken from the publicly available `hipandkneesurgery.ie` site as inspected on 15 October 2026. Current service scope, all medical copy, credentials, patient documents and legal notices require practice approval before official use. No testimonial, rating, third-party endorsement or unverified success rate has been reused.
+This is **not the official practice website**. Company details, procedure topics, the practice logo, surgeon portrait, banner texture and selected anatomical illustrations were taken from the publicly available `hipandkneesurgery.ie` site as inspected on 15 October 2026, following the user's request to use the existing identity. The visual palette follows its dark teal `#013438`, blue `#024278`, cyan `#2ac6f9` and supporting pale blue. Current service scope, all medical copy, credentials, patient documents, image usage rights and legal notices require practice approval before official use. No testimonial, rating, third-party endorsement or unverified success rate has been reused.
 
 ## Run
 
@@ -15,6 +15,10 @@ npm run start
 ```
 
 The only client-side interaction is a browser-only appointment form preview. It submits no network request and saves no data. The call, email and map links open external applications when selected.
+
+## Original visual assets
+
+Files under `public/brand/` are unchanged copies from `https://www.hipandkneesurgery.ie/images/`: `prof-stuart-edwards-logo.png`, `stuart-edwards-profile-photo.jpg`, `flash-banner.jpg`, `1.jpg` through `4.jpg`, `hip-osteoarthritis.jpg`, and `knee-osteoarthritis.jpg`. The source images are small, so they are presented as contained illustrations and a modest portrait instead of enlarged full-width photography. `public/social-card.png` is a new layout that includes the original logo and hip illustration. The demo must remain clearly marked as an independent concept until practice approval.
 
 ## Pages
 
@@ -41,7 +45,7 @@ Legacy source-site paths have explicit redirects in `next.config.ts`. Obsolete o
 | Improve readability and navigation | Distinct hubs, concise procedure pages, related links, questions to ask, patient guide and GP page | 31 direct HTML routes returned 200 locally |
 | Improve SEO metadata while keeping demo unindexed | Individual titles/descriptions, Open Graph card, semantic headings, `lang="en"`, noindex header/meta | HTML and response headers checked |
 | Accessibility and motion | Semantic HTML, skip link, native `details` for menu/FAQ, visible focus, labels, local fonts, reduced-motion CSS | Axe WCAG A/AA scan on all 31 routes at desktop and mobile; no reported violations after contrast corrections |
-| Avoid unsupported trust claims | No review schema, success statistics, borrowed logos or synthetic doctor portrait | Source inspection |
+| Avoid unsupported trust claims | No review schema, success statistics or synthetic doctor portrait; the real portrait and practice logo are reused from the source site | Source inspection |
 | Review consent and data flow | No analytics, cookies or real data collection in demo; privacy note calls out approval needed for an official launch | Fresh browser request/cookie checks |
 | Make the source reproducible | Exact dependency versions, `package-lock.json`, `npm ci` | Install/build/lint/typecheck recorded during delivery |
 
@@ -51,7 +55,7 @@ Legacy source-site paths have explicit redirects in `next.config.ts`. Obsolete o
 2. Practice confirmation of phone number, email, location, referral requirements and appointment workflow.
 3. Replacement of outdated patient PDFs with currently approved hospital documents.
 4. Approved legal privacy notice and any real form delivery service, including data processing and consent design.
-5. Approved clinician photography or other licensed brand assets if desired. All anatomical-style graphics here are original decorative SVG, not diagnostic illustrations.
+5. Practice confirmation of usage rights and currency for the logo, portrait and anatomical images reproduced from the existing website. Decorative SVG remains non-diagnostic.
 
 ## Tooling
 
