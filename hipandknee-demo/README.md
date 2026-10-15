@@ -2,7 +2,7 @@
 
 An English-language website concept for an Irish orthopaedic practice. Built with Next.js 16.4.1, React 19.3.1 and TypeScript 5.9.3. The app is intentionally public but `noindex, nofollow` in HTML metadata and the `X-Robots-Tag` response header.
 
-This is **not the official practice website**. Company details, procedure topics, the practice logo, surgeon portrait, banner texture and selected anatomical illustrations were taken from the publicly available `hipandkneesurgery.ie` site as inspected on 15 October 2026, following the user's request to use the existing identity. The visual palette follows its dark teal `#013438`, blue `#024278`, cyan `#2ac6f9` and supporting pale blue. Current service scope, all medical copy, credentials, patient documents, image usage rights and legal notices require practice approval before official use. No testimonial, rating, third-party endorsement or unverified success rate has been reused.
+This is **not the official practice website**. Company details, procedure topics, the practice logo, surgeon portrait, banner texture and selected anatomical illustrations were taken from the publicly available `hipandkneesurgery.ie` site as inspected on 15 October 2026, following the user's request to use the existing identity. The visual palette emphasizes the original site’s blue `#024278` and `#044670`, bright cyan `#2ac6f9`, and pale blue `#bfd1e0`. The transparent white and cyan practice logo is reproduced byte for byte from the source site. Current service scope, all medical copy, credentials, patient documents, image usage rights and legal notices require practice approval before official use. No testimonial, rating, third-party endorsement or unverified success rate has been reused.
 
 ## Run
 
